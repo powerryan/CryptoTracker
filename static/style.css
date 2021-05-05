@@ -1,0 +1,55 @@
+/*The container*/ 
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+  border-style: solid;
+  height: 10%;
+  
+}
+
+.tablest {
+  width:350px;
+  float: center;
+  text-align: center;
+    margin: 0px;
+	padding: 0px;
+}
+
+.current {
+  float: center;
+  margin: 0px;
+  padding: 0px;
+  background-color: gray;
+  border-style: solid;
+  width: 100%;
+  height: 100%;
+  
+}
+
+/*There are 3 items in my menus so this defines the width and display*/
+.menu-item 
+{
+  float: left;
+  width: 33.3%;
+}
+
+/*This sets the color and text properties for the items on the menu*/
+.menu-item a 
+{ 
+  display: block;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  text-align: center;
+  padding-top: 5%;
+  text-decoration: none;  
+}
+
+/*changes the color when the item is hovered overflow*/
+.menu-item a:hover 
+{
+  color: #ff0000;
+}
+

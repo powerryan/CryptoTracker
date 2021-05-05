@@ -1,0 +1,65 @@
+body{
+  background-color: #111122 !important;
+}
+.menu {
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  background-color: #111122;
+}
+label{
+  color: white;
+}
+p{
+  color: #ff6666;
+}
+/*There are 3 items in my menus so this defines the width and display*/
+.menu-item
+{
+  float:left;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 20px;
+  margin-right: 50px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: white;
+}
+/*This sets the color and text properties for the items on the menu*/
+.menu-item a
+{
+  display: block;
+  font-family: Quicksand;
+  text-align: center;
+  padding-top: 0px  ;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+/*changes the color when the item is hovered overflow*/
+.menu-item a:hover
+{
+  color: #ff6666 !important;
+}
+
+#login, #signup{
+  float:right;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+.row-user{
+  text-align:center;
+  font-family: Quicksand;
+}
+.login-heading{
+  font-family: Roboto;
+  color: white;
+}

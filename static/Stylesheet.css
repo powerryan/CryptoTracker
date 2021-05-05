@@ -1,0 +1,171 @@
+/*The container*/
+body{
+  padding-top:60px;
+}
+
+.menu {
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  background-color: #111122;
+  max-width: 1320px;
+  width: 90%;
+}
+
+.theme{
+  float: right;
+  margin-right: 35%;
+  border-radius: 15px;
+  text-decoration: none;
+  font-family: Quicksand;
+  font-weight: 900;
+  font-size: .7rem;
+  padding: 4px;
+}
+.theme:hover{
+  color: #ff6666 !important;
+}
+
+.theme-dark {
+  background-color: rgb(17, 17, 34) !important;
+  color: white !important;
+}
+
+.theme-light {
+  background-color: white !important;
+  color: rgb(17, 17, 34) !important;
+}
+
+.light {
+  background-color: white;
+}
+
+.dark {
+  background-color: rgb(17, 17, 34);
+  color: white;
+}
+
+.light-text {
+  color: black;
+}
+
+.dark-text {
+  color: white;
+}
+
+
+/*There are 3 items in my menus so this defines the width and display*/
+.menu-item
+{
+  float:left;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 20px;
+  margin-right: 50px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.menu-item-right
+{
+  float:right;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 20px;
+  margin-right: 50px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+/*This sets the color and text properties for the items on the menu*/
+.menu-item a
+{
+  display: block;
+  font-family: Quicksand;
+  text-align: center;
+  padding-top: 0px  ;
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu-item-right a
+{
+  display: block;
+  font-family: Quicksand;
+  text-align: center;
+  padding-top: 0px  ;
+  text-decoration: none;
+  font-weight: bold;
+}
+.hr{
+  color: white;
+}
+.news {
+  height: 500px;
+  overflow-y: scroll;
+}
+.news a{
+  text-decoration: none;
+  font-family: Prata;
+}
+.news a:hover{
+  color: #ff6666 !important;
+}
+/*changes the color when the item is hovered overflow*/
+.menu-item a:hover
+{
+  color: #ff6666 !important;
+}
+.menu-item-right a:hover
+{
+  color: #ff6666 !important;
+}
+.price{
+  font-family: 'Quicksand', sans-serif;
+}
+
+.change{
+  color: #22AA55;
+  font-size: 1.5rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.perChange{
+  color: #22AA55;
+  font-size: 1.5rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/*from chart js*/
+* {
+	font-family: sans-serif;
+}
+
+.headings {
+  font-family: 'Quicksand';
+  font-weight: bold;
+	font-size:1em;
+  color: #777777
+
+
+}
+.subheading {
+	font-size:.8em;
+  color: #888888
+}
+h2 {
+	font-size: 1.5em;
+}
+.data{
+  font-family: 'Quicksand', sans-serif;
+}
+
+#bit-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

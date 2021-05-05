@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='calcStyle.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+</head>
+
+<body>
+
+  <br />
+  <br />
+  <div class = "allbtns">
+    <script>
+    function sound() {
+        var audio = new Audio('/static/sound/click.mp3');
+        audio.play();
+    }
+    </script>
+    <div class="set">
+      <button class="output">0</button>
+    </div>
+    <div class="set">
+      <button class="AC btn clear" onclick = "sound()">AC</button>
+      <button class="f btn" onclick = "sound()">^</button>
+      <button class="m btn" onclick = "sound()">%</button>
+      <button class="d btn" onclick = "sound()">/</button>
+    </div>
+    <div class="set">
+      <button class="sev btn num" onclick = "sound()">7</button>
+      <button class="eig btn num" onclick = "sound()">8</button>
+      <button class="nin btn num" onclick = "sound()">9</button>
+      <button class="t btn" onclick = "sound()">*</button>
+    </div>
+    <div class="set">
+      <button class="fou btn num" onclick = "sound()">4</button>
+      <button class="fiv btn num" onclick = "sound()">5</button>
+      <button class="six btn num" onclick = "sound()">6</button>
+      <button class="s btn" onclick = "sound()">-</button>
+    </div>
+    <div class="set">
+      <button class="one btn num" onclick = "sound()">1</button>
+      <button class="two btn num" onclick = "sound()">2</button>
+      <button class="thr btn num" onclick = "sound()">3</button>
+      <button class="a btn" onclick = "sound()">+</button>
+    </div>
+    <div class="set">
+      <button class="C btn clear" onclick = "sound()">C</button>
+      <button class="zer btn num" onclick = "sound()">0</button>
+      <button class="p btn" onclick = "sound()">.</button>
+      <button class="e btn" onclick = "sound()">=</button>
+    </div>
+  </div>
+
+  <script src="{{url_for('static', filename='calcOp.js')}}" charset="utf-8">
+  </script>
+
+</body>
+
+</html>
