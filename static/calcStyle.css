@@ -32,6 +32,9 @@
   background-color: white;
   padding: 0px;
 }
+.calcbtn a:hover{
+  color: #ff6666 !important;
+}
 .link{
   text-decoration: none;
   font-size:1rem;

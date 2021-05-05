@@ -42,11 +42,43 @@
         </li>
       </ul>
     </div>
+    <!-- <script src="{{url_for('static', filename='portfolio.js')}}" charset="utf-8">
+    </script>
+    <script>
+
+    var x = 0
+    var coins_list = [{{user.bits}}, {{user.doges}}, {{user.ethers}}]
+    var values = []
+    fetch(url_list[0])
+      .then(res => res.json())
+      .then(data => {
+        fetch(url_list[1])
+          .then(res => res.json())
+          .then(data1 => {
+            fetch(url_list[2])
+              .then(res => res.json())
+              .then(data2 => {
+                getValue(data, data1, data2)
+              })
+            })
+          })
+    function getValue(data, data1, data2){
+      total = 0
+      total += data.USD * coins_list[0]
+      total += data1.USD * coins_list[1]
+      total += data2.USD * coins_list[2]
+      document.getElementById("value").innerHTML =
+      "$"+total.toLocaleString('en-US',
+      { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    }
+
+    </script> -->
   <div class="row row-user" style="display:flex">
   <div class="col-sm signup" id="d2">
     <h1 class="login-heading" style = "font-size: 50px"> Welcome, {{user.name}} </h1><br>
-    <h1 class="login-heading"> Your total account value is: </h1>
-    <h1 class="login-heading" style = "font-size: 100px"> ${{value}} </h1>
+    <h1 class="login-heading"> Your total account value is: </h1><br>
+    <h1 class="login-heading" id="value" style = "font-size: 100px">${{value}}</h1>
     <br />
     </div>
     </div>
@@ -56,7 +88,7 @@
          <form class="form1" style="display:none" action="{{ url_for('portfolio') }}" method="POST">
            <label>Please enter in number of bitcoins</label><br>
            <input type="text" name="bits"><br>
-           <label>Please enter in number of etherium</label><br>
+           <label>Please enter in number of ethereum</label><br>
            <input type="text" name="ethers"><br />
            <label>Please enter in number of dogecoins</label><br>
            <input type="text" name="doges"><br /><br />

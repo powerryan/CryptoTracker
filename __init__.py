@@ -3,7 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from .CryptoNews import CryptoNews
-
+from .CryptoCompareAPI import CryptoCompareAPI
+from .ErrorHandler import ErrorHandler
+from requests import get, Response
+cryptocompare_api = CryptoCompareAPI()
+error_handler = ErrorHandler()
 app = Flask(__name__, instance_relative_config=True)
 
 ##CREATE DATABASE
@@ -37,8 +41,6 @@ class User(UserMixin, db.Model):
             self.ethers,
             self.doges,
         )
-
-
 
 db.create_all()
 
@@ -108,14 +110,44 @@ def logout():
 @app.route("/portfolio", methods=["GET", "POST"])
 @login_required
 def portfolio():
+    values = 0
     if request.method == "POST":
         current_user.bits = request.form["bits"]
         current_user.ethers = request.form["ethers"]
         current_user.doges = request.form["doges"]
         db.session.commit()
 
-    portfolio = current_user.bits * 60000
-    portfolio += current_user.doges * .30
-    portfolio += current_user.ethers * 2000
-    portfolio = "{:,.2f}".format(portfolio)
-    return render_template("portfolio.html", user=current_user, value=portfolio)
+    url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD"
+    url = url + "&api_key=" + "15bbc2af04315d0d116d7a99909e23d0a026a0ebf729cb0033d82295b3748d6f"
+    res = get(url)
+    values += res.json()["USD"] * current_user.bits
+    url1 = "https://min-api.cryptocompare.com/data/price?fsym=DOGE&tsyms=USD"
+    url1 = url1 + "&api_key=" + "15bbc2af04315d0d116d7a99909e23d0a026a0ebf729cb0033d82295b3748d6f"
+    res1 = get(url1)
+    values += res1.json()["USD"] * current_user.doges
+    url2 = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD"
+    url2 = url2 + "&api_key=" + "15bbc2af04315d0d116d7a99909e23d0a026a0ebf729cb0033d82295b3748d6f"
+    res2 = get(url2)
+    values += res2.json()["USD"] * current_user.ethers
+    # cc_api = CryptoCompareAPI()
+    # payload = {"coin": "BTC", "currency": "USD"}
+    # res = cc_api.api_call("current+single_symbol", payload)
+    # values += res.json()["USD"] * current_user.bits
+    # print(values)
+    # payload1 = {"coin": "DOGE", "currency": "USD"}
+    # res1 = cc_api.api_call("current+single_symbol", payload1)
+    # values += res1.json()["USD"] * current_user.doges
+    # print(values)
+    # payload2 = {"coin": "ETH", "currency": "USD"}
+    # res2 = cc_api.api_call("current+single_symbol", payload2)
+    # values += res2.json()["USD"] * current_user.ethers
+    # print(values)
+
+    # portfolio = current_user.bits * 54845.67
+    # portfolio += current_user.doges * .59
+    # portfolio += current_user.ethers * 3374.26
+
+    values = "{:,.2f}".format(values)
+
+
+    return render_template("portfolio.html", user=current_user, value=values)
