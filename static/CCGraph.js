@@ -1,4 +1,4 @@
-var API_KEY = "15bbc2af04315d0d116d7a99909e23d0a026a0ebf729cb0033d82295b3748d6f";
+var API_KEY = "";
 var INTERVAL = 100
 var URL_FRAGMENT = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym=USD&limit=${INTERVAL}`;
 var URL_FRAGMENT_DOGE = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=DOGE&tsym=USD&limit=${INTERVAL}`;
